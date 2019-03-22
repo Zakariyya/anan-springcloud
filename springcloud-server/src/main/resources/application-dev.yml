@@ -24,16 +24,16 @@ server:
   servlet:
     context-path: /  # 集群 这里 非/ 的话会出现eureka中没有互相注册，没有服务注册的情况
 
-eureka:
-  instance:
-    hostname: eureka1  # 设置eureka实例名称，与配置文件的变量为主
-  client:
-    service-url:
-      defaultZone: http://eureka2:8761/eureka/  # 设置服务注册中心地址，指向另一个注册中心 ，结构是一定的：http://{hostname}:{port}/eureka/
-
 #eureka:
+#  instance:
+#    hostname: eureka1  # 设置eureka实例名称，与配置文件的变量为主
 #  client:
-#    register-with-eureka: false # 是否将自己注册到 eureka-server 中，默认为true。否则eureka会一直尝试自己注册自己，导致异常
-#    fetch-registry: false # 是否从 eureka-server 中获取服务注册信息，默认为true
+#    service-url:
+#      defaultZone: http://eureka2:8761/eureka/  # 设置服务注册中心地址，指向另一个注册中心 ，结构是一定的：http://{hostname}:{port}/eureka/
+
+eureka:
+  client:
+    register-with-eureka: false # 是否将自己注册到 eureka-server 中，默认为true。否则eureka会一直尝试自己注册自己，导致异常
+    fetch-registry: false # 是否从 eureka-server 中获取服务注册信息，默认为true
 
 
