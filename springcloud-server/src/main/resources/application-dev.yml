@@ -22,14 +22,14 @@
 server:
   port: 8761
   servlet:
-    context-path: /eureka-server
+    context-path: /  # 集群 这里 非/ 的话会出现eureka中没有互相注册，没有服务注册的情况
 
 eureka:
   instance:
     hostname: eureka1  # 设置eureka实例名称，与配置文件的变量为主
   client:
     service-url:
-      defaultZone: http://eureka2:8761/eureka/  # 设置服务注册中心地址，指向另一个注册中心
+      defaultZone: http://eureka2:8761/eureka/  # 设置服务注册中心地址，指向另一个注册中心 ，结构是一定的：http://{hostname}:{port}/eureka/
 
 #eureka:
 #  client:
