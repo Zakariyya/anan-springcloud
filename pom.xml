@@ -26,7 +26,8 @@
 
 	<modules>
 		<module>springcloud-server</module>
-		<!--<module>springcloud-provider</module>-->
+		<module>springcloud-provider</module>
+		<module>springcloud-consumer</module>
 	</modules>
 
 	<build>
